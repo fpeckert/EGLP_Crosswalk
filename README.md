@@ -102,4 +102,5 @@ They add the columns `weight_livable` and `weight_population` to the three cross
 - `weight_livable` is now the share of the historical county's livable land in every row. Before, it spread the county's census count over its livable land, so map units without a census count (229 county-years of 179 map units) got their share of grid cells instead. This changes `weight_livable` in 174 of these county-years in the 2010 county file, 106 in the 1990 county file and 94 in the commuting zone file. No other value changed by more than 1 in 100 million.
 - `Crosswalks/README_crosswalks.md` lists the data corrections and the errors we know remain.
 - The README and the scripts cite the November 2026 version of the paper.
+- The general script (`Code/crosswalk_generic.py`) works when an ID column is called `area`, `area_base` or `weight`. Before, the columns it adds overwrote such an ID column and it wrote wrong IDs and weights without an error. For other names its output is unchanged, byte for byte.
 
